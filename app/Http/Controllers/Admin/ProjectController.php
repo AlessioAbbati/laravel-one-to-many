@@ -66,7 +66,7 @@ class ProjectController extends Controller
         // return 'commentare se serve debuggare';
         // $newComic = Comic::create($data);
 
-        return redirect()->route('Admin.project.show', ['project' => $newProject]);
+        return redirect()->route('admin.project.show', ['project' => $newProject]);
     }
 
     
@@ -104,7 +104,7 @@ class ProjectController extends Controller
 
        
 
-        return redirect()->route('Admin.project.show', ['project' => $project]);
+        return redirect()->route('admin.project.show', ['project' => $project]);
     }
 
    
