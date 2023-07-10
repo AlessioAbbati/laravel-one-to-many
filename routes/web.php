@@ -40,6 +40,7 @@ Route::middleware('auth', 'verified')
         Route::get('/project/trashed', [ProjectController::class, 'trashed'])->name('project.trashed');
         Route::post('/project/{project}/restore', [ProjectController::class, 'restore'])->name('project.restore');
         Route::delete('/project/{project}/harddelete', [ProjectController::class, 'harddelete'])->name('project.harddelete');
+        route::post('/project/{project}/cancel', [ProjectController::class, 'cancel'])->name('project.cancel');
 
         Route::resource('project', ProjectController::class);
         Route::resource('type', TypeController::class);

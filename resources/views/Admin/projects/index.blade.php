@@ -2,20 +2,18 @@
 
 @section('contents')
 
-    @if (session('delete_success'))
-    @php $project = session('delete_success') @endphp
-    <div class="alert alert-danger">
-        The project "{{ $project->title }}" has been Deleted
-        <form
-            action="{{ route("admin.project.restore", ['project' => $project]) }}"
-                method="post"
-                class="d-inline-block"
-            >
-            @csrf
-            <button class="btn btn-warning">Cancel</button>
-        </form>
-    </div>
-    @endif
+@if (session('delete_success'))
+@php
+    $project = session('delete_success')
+@endphp
+<div class="alert alert-danger">
+    "{{ $project->title }}" has been moved to the trash!!
+    <form action="{{ route("admin.project.cancel", ['project' => $project] )}}" method="post">
+        @csrf
+        <button class="btn btn-warning">Cancel</button>
+    </form>
+</div>
+@endif
 
     <table class="table table-striped">
         <thead>
