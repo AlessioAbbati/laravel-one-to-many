@@ -7,8 +7,8 @@
     <h2>projects in this category</h2>
     <ul>
         @foreach ($type->projects as $project)
-        <li><a href="{{ route('admin.project.show', ['project' => $project]) }}">{{ $project->title }}</a></li>
-    @endforeach
+           <li><a href="{{ route('admin.project.show', ['project' => $project]) }}">{{ $project->title }}</a></li>
+        @endforeach
         
     </ul>
     
