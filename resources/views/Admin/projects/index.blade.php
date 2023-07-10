@@ -28,6 +28,7 @@
                 <th scope="col">Description</th>
                 <th scope="col">Languages</th>
                 <th scope="col">Link Github</th>
+                <th scope="col">Type</th>
             </tr>
         </thead>
         <tbody>
@@ -41,6 +42,7 @@
                     <td>{{ $project->description }}</td>
                     <td>{{ $project->languages }}</td>
                     <td><a href="{{ $project->link_github }}">GitHub</a></td>
+                    <td><a href="{{ route('admin.type.show', ['type' => $project->type]) }}">{{ $project->type->name }}</a></td>
                     <td>
                         <a class="btn btn-primary" href="{{ route('admin.project.show', ['project' => $project->id]) }}">View</a>
                         <a class="btn btn-warning" href="{{ route('admin.project.edit', ['project' => $project->id]) }}">Edit</a>
@@ -83,5 +85,5 @@
         </div>
     </div> --}}
 
-{{-- {{ $projects->links() }} --}}
+{{ $projects->links() }}
 @endsection

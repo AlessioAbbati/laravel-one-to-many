@@ -12,14 +12,23 @@
                     <a class="nav-link" href="{{ route('admin.dashboard') }}">Dashboard</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="{{ route('admin.project.index') }}" role="button" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Projects
                     </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ route('admin.project.index') }}">Index</a></li>
+                        <li><a class="dropdown-item" href="{{ route('admin.project.create') }}">Add</a></li>
+                    </ul>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link" href="{{ route('admin.project.create') }}" role="button" aria-expanded="false">
-                        New Project
+                <li class="nav.item dropown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Types
                     </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ route('admin.type.index') }}">Index</a></li>
+                        <li><a class="dropdown-item" href="{{ route('admin.type.create') }}">Add</a></li>
+                    </ul>
+
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="{{ route('admin.project.trashed') }}" role="button" aria-expanded="false">

@@ -15,6 +15,21 @@
         </div>
 
         <div class="mb-3">
+            <label for="type" class="form-label">type</label>
+            <select class="form-select @error('type_id') is-invalid @enderror" id="type" name="type_id">
+                <option selected>Change type</option>
+
+                @foreach ($types as $type)
+                    <option value="{{ $type->id }}">{{ $type->name }}</option>
+                @endforeach
+            </select>
+            <div class="invalid-feedback">
+                @error('type_id') {{ $message }} @enderror
+            </div>
+        </div>  
+
+
+        <div class="mb-3">
             <label for="author" class="form-label">Author</label>
             <input type="text" class="form-control @error('author') is-invalid @enderror" id="author" name="author" value="{{ old('author')}}">
             <div class="invalid-feedback">

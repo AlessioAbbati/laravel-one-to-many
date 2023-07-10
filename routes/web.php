@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\Guest\PageController as GuestPageController;
-use App\Http\Controllers\Admin\PageController as AdminPageController;
+use App\Http\Controllers\Admin\TypeController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\PageController as AdminPageController;
+use App\Http\Controllers\Guest\PageController as GuestPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,7 @@ Route::middleware('auth', 'verified')
         Route::delete('/project/{project}/harddelete', [ProjectController::class, 'harddelete'])->name('project.harddelete');
 
         Route::resource('project', ProjectController::class);
+        Route::resource('type', TypeController::class);
     });
 
 require __DIR__ . '/auth.php';
