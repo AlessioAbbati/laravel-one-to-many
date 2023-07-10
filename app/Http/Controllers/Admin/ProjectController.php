@@ -10,7 +10,7 @@ class ProjectController extends Controller
 {
     private $validations = [
         'title'             => 'required|string|max:50',
-        'type_id'           => 'required|integer|exists:categories,id',
+        'type_id'           => 'required|integer|exists:types,id',
         'author'            => 'required|string|max:30',
         'creation_date'     => 'required|date',
         'last_update'       => 'required|date',
