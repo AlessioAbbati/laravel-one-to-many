@@ -6,14 +6,6 @@
     @php $project = session('delete_success') @endphp
     <div class="alert alert-danger">
         The project "{{ $project->title }}" has been Deleted
-        <form
-            action="{{ route("admin.project.restore", ['project' => $project]) }}"
-                method="post"
-                class="d-inline-block"
-            >
-            @csrf
-            <button class="btn btn-warning">Calcel</button>
-        </form>
     </div>
     @endif
 
